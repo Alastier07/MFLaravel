@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $posts = Post::orderBy('userLast', 'asc')->paginate(10);
+        return view('pages.index')->with('posts', $posts);;
     }
 
     // pass with single data.
