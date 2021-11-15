@@ -41,8 +41,8 @@
         <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
+                <th scope="col">Firstname</th>
                 <th scope="col">Email</th>
                 <th scope="col">Gender</th>
                 <th scope="col"></th>
@@ -52,9 +52,9 @@
         @if(count($posts) > 0)
             <tbody>             
                 @foreach ($posts as $user)   
-                    <tr>           
+                    <tr>    
+                        <td>{{$user->userLast}}</td>       
                         <td>{{$user->userFirst}}</td>
-                        <td>{{$user->userLast}}</td>
                         <td>{{$user->userEmail}}</td>
                         <td>{{$user->userGender}}</td>
                         <td><a class="btn btn-link" style="padding: 0 0;" href="posts/{{$user->id}}/edit">Edit</a></td>
